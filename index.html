@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>clearInterval em JavaScript</title>
+  </head>
+  <body>
+    <div id="contador">Aguardando contagem...</div>
+    <button onClick="javascript:limparContagem();">Parar contagem</button>
+
+    <script>
+      let contagem = 1;
+      let divContador = document.getElementById("contador");
+
+      const contador = setTimeout(() => {
+        divContador.textContent = "Executei";
+      }, 5000);
+
+      function limparContagem() {
+        clearInterval(contador);
+        divContador.textContent = "Contagem parado!";
+      }
+    </script>
+  </body>
+</html>
